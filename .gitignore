@@ -1,0 +1,9 @@
+*.py[co]
+*.swp
+.tox
+dist/*
+MANIFEST
+*.egg-info
+*.xml
+*.log
+conf.d/*.yml

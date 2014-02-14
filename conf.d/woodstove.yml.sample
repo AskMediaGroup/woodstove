@@ -1,0 +1,39 @@
+storm:
+ dsn: mysql://foo:bar@db.foo.bar/woodstove
+ debug: true
+ file: /var/log/woodstove/storm.log
+
+server:
+ fail_jobs_on_start: false
+
+queue:
+ host: redis.foo.bar
+ port: 6379
+ std_name: std
+ std_queue: std
+ std_timeout: 300
+ bulk_name: std
+ bulk_timeout: 3600
+ cleanup_timeout: 60
+
+plugins:
+- bar.plugins
+
+apps:
+ - management
+ - bar
+ - baz
+
+logging:
+ level: DEBUG
+ file: /var/log/woodstove/woodstove.log
+
+groups:
+ superuser: woodstove_admins
+
+manhole:
+ passwd: foobar
+ port_begin: 2222
+
+auth:
+ adapter: db
